@@ -20,5 +20,4 @@ while petrol_pumps_copy:
     else:
         tank_of_fuel -= distance
 
-
 print(index)
