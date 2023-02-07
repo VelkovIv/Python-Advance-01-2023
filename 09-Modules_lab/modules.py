@@ -1,3 +1,6 @@
+import operator as op
+
+
 def print_triangle(num):
     result = ''
     for n in range(1, num + 1):
@@ -11,3 +14,9 @@ def print_triangle(num):
         result += '\n'
 
     return result
+
+
+def calculation(first_num, operator, second_num):
+    operations = {"+": op.add, "-": op.sub, "*": op.mul, "/": op.truediv, "^": op.pow}
+
+    return operations[operator](first_num, second_num)
