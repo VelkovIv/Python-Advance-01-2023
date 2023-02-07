@@ -20,3 +20,25 @@ def calculation(first_num, operator, second_num):
     operations = {"+": op.add, "-": op.sub, "*": op.mul, "/": op.truediv, "^": op.pow}
 
     return operations[operator](first_num, second_num)
+
+
+sequence = []
+
+
+def create_fibonacci_sequence(num):
+    sequence.clear()
+    sequence.append(0)
+    sequence.append(1)
+
+    for _ in range(num - 2):
+        sequence.append(sequence[-2] + sequence[-1])
+
+    return f'{" ".join(map(str, sequence))}'
+
+
+def locate_number(num):
+    if num in sequence:
+        index = sequence.index(num)
+        return f'The number - {num} is at index {index}'
+    else:
+        return f'The number {num} is not in the sequence'
