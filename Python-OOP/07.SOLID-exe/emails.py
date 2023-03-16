@@ -95,9 +95,12 @@ class Email(IEmail):
 # print(email)
 
 email = Email()
-sender = IMSender('qmal', 'IM')
+
+protocol = 'IM'
+sender = IMSender('qmal', protocol)
+receiver = IMReceiver('james', protocol)
+
 email.set_sender(sender)
-receiver = IMReceiver('james', 'IM')
 email.set_receiver(receiver)
 content = MyContent('Hello, there!')
 email.set_content(content)
