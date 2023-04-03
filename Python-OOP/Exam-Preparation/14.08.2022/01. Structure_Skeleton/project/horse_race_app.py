@@ -48,8 +48,9 @@ class HorseRaceApp:
                 return jockey
 
     def create_horse_race(self, race_type: str):
-        if race_type in self.horse_races:
+        if race_type in [r.race_type for r in self.horse_races]:
             raise Exception(f"Race {race_type} has been already created!")
+
         horse_race = HorseRace(race_type)
         self.horse_races.append(horse_race)
 
@@ -125,17 +126,3 @@ class HorseRaceApp:
         return f"The winner of the {race_type} race, with a speed of {highest_speed}km/h is {jockey_name}! " \
                f"Winner's horse: {horse_name}."
 
-
-# horseRaceApp = HorseRaceApp()
-# print(horseRaceApp.add_horse("Appaloosa", "Spirit", 80))
-# print(horseRaceApp.add_horse("Thoroughbred", "Rocket", 110))
-# print(horseRaceApp.add_jockey("Peter", 19))
-# print(horseRaceApp.add_jockey("Mariya", 21))
-# print(horseRaceApp.create_horse_race("Summer"))
-# print(horseRaceApp.add_horse_to_jockey("Peter", "Appaloosa"))
-# print(horseRaceApp.add_horse_to_jockey("Peter", "Thoroughbred"))
-# print(horseRaceApp.add_horse_to_jockey("Mariya", "Thoroughbred"))
-# print(horseRaceApp.add_jockey_to_horse_race("Summer", "Mariya"))
-# print(horseRaceApp.add_jockey_to_horse_race("Summer", "Peter"))
-# print(horseRaceApp.add_jockey_to_horse_race("Summer", "Mariya"))
-# print(horseRaceApp.start_horse_race("Summer"))
